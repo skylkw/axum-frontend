@@ -21,6 +21,12 @@ export const authenticateResponseInterceptor = ({
   return {
     rejected: async (error) => {
       const { config, response } = error;
+      // 如果是404错误, 且code为2, 重定向到登录页面
+      if (response?.status === 404 && response.data.code === 2) {
+        // 重定向到登录页面
+        await doReAuthenticate();
+        throw error;
+      }
       // 如果不是 401 错误，直接抛出异常
       if (response?.status !== 401) {
         throw error;
@@ -48,7 +54,6 @@ export const authenticateResponseInterceptor = ({
 
       try {
         const newToken = await doRefreshToken();
-
         // 处理队列中的请求
         client.refreshTokenQueue.forEach((callback) => callback(newToken));
         // 清空队列

@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD:apps/web-axum/package.json
   "name": "@vben/web-axum",
-  "version": "5.3.1",
-=======
-  "name": "@vben/web-antd",
   "version": "5.3.2",
->>>>>>> 46540a73299670e860df1b6fadd88790bc55d8ca:apps/web-antd/package.json
   "homepage": "https://vben.pro",
   "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
   "repository": {
@@ -31,6 +26,8 @@
     "#/*": "./src/*"
   },
   "dependencies": {
+    "@radix-icons/vue": "^1.0.0",
+    "@tanstack/vue-table": "^8.20.5",
     "@vben/access": "workspace:*",
     "@vben/common-ui": "workspace:*",
     "@vben/constants": "workspace:*",
@@ -48,6 +45,7 @@
     "@vueuse/core": "catalog:",
     "ant-design-vue": "catalog:",
     "dayjs": "catalog:",
+    "lucide-vue-next": "^0.436.0",
     "pinia": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"

@@ -69,7 +69,7 @@ interface AuthenticationProps {
 
 interface LoginAndRegisterParams {
   password: string;
-  username: string;
+  email: string;
 }
 
 interface LoginCodeParams {
